@@ -1,3 +1,5 @@
+import AdatFeldolgozModel from "./AdatFeldolgozModel.js";
+
 class IndexController
 {
     constructor()
