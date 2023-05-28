@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\KategoriaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReceptekController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,5 +29,17 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get("/kategoriak", [KategoriaController::class, "index"]);
+Route::get("/kategoriak/{id}", [KategoriaController::class, "show"]);
+Route::post("/kategoriak", [KategoriaController::class, "store"]);
+Route::put("/kategoriak/{id}", [KategoriaController::class, "update"]);
+Route::delete("/kategoriak/{id}", [KategoriaController::class, "destroy"]);
+
+Route::get("/receptek", [ReceptekController::class, "index"]);
+Route::get("/receptek/{id}", [ReceptekController::class, "show"]);
+Route::post("/receptek", [ReceptekController::class, "store"]);
+Route::put("/receptek/{id}", [ReceptekController::class, "update"]);
+Route::delete("/receptek/{id}", [ReceptekController::class, "destroy"]);
 
 require __DIR__.'/auth.php';
